@@ -55,6 +55,8 @@ public class Canvas {
         frame.pack();
     }
 
+  
+    
     public void addCircle(Circle circle) {
         circles.add(circle);
 
