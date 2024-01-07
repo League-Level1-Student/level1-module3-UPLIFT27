@@ -61,5 +61,6 @@ public class NetflixQueue {
 			System.out.println(movie);
 		}
 	}
+	
 
 }

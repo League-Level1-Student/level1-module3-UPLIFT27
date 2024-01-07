@@ -8,6 +8,8 @@ import game_tools.Sound;
  * In this class:
  * 1. Make a constructor for the CowTimer class that initializes the seconds
  *    variable.
+ *    
+ *    
  * 
  * 2. In the start() method, count down the seconds, print the current second,
  *    then sleep for the number of seconds using Thread.sleep(int milliseconds).
@@ -24,9 +26,20 @@ import game_tools.Sound;
  * In the CowTimerRunner class:
  * Complete the main method
  */
+
+
+
+
 public class CowTimer {
     private int seconds;
-
+   
+    public  CowTimer(){
+    	
+    	seconds =5;
+    	
+    	
+    }
+  
     public void setTime(int seconds) {
         this.seconds = seconds;
         System.out.println("Cow time set to " + this.seconds + " seconds.");
@@ -34,6 +47,13 @@ public class CowTimer {
 
     public void start() throws InterruptedException {
         
+    	while(seconds>=0)
+    	{
+    	System.out.println(seconds);
+    	seconds--;
+    	Thread.sleep(1000);
+    	}
+    	
     }
 
     public void playSound(final String file) {
