@@ -1,49 +1,79 @@
 package _06_frogger;
 
 import processing.core.PApplet;
-public class Car extends PApplet
-{
-	int x;
-	int y; 
-	int size;
-	int speed;
-	
+import processing.core.PImage;
 
-	void display()
-	  {
-	    fill(0,255,0);
-	    rect(x , y,  size, 50);
-	  }
+public class Car extends PApplet {
+	int x;
+	int y;
+	int size = 60;
+	int speed = 10;
+	PImage car;
 	
-	int getX()
+	
+	
+	public Car(int x, int y)
 	{
+		this.x = x;
+		this.y = y;
+		
+		
+	}
+	
+	void speeds(int wins)
+	{
+		if(wins==0)
+		{
+			speed=10;
+		}
+		else
+		{
+			speed=+15;
+		}
+	}
+	
+	void loadCar(PImage c)
+	{
+		car = c;
+		
+		car.resize(160, 100);
+	}
+
+	PImage display() {
+		return car;
+	}
+
+	int getX() {
 		return x;
 	}
-	int getY()
-	{
+
+	int getY() {
 		return y;
 	}
-	int getSize()
-	{
+
+	int getSize() {
 		return size;
 	}
 
+	void leftmov()
 
-void movement()
+	{
+		
 
-{
-speed=10;
+		x = x-speed;
 
-x=-speed;
+		if (x < 0) {
+			x = Frogger.WIDTH;
+		}
 
+	}
+	void rightmov()
+	{
+		x = x + speed;
+		if(x>Frogger.WIDTH)
+		{
+			x= 0;
+		}
+	}
 
-if(x>0)
-{
-	x=WIDTH;
 }
-	
-}
-
-}
-
-
